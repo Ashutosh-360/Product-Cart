@@ -21,3 +21,28 @@ function removeCounterFunc()
 }
 
 
+
+
+// ================================For scrolling Images==============
+const mainImageElement=document.getElementById("main-image");
+
+let imageSrcArray=["./img/image-product-1.jpg","./img/image-product-2.jpg","./img/image-product-3.jpg","./img/image-product-4.jpg"]
+
+let imageCounter=0;
+document.getElementById("scroll-left").addEventListener("click",()=>
+{
+    if(imageCounter>0)
+    {
+    imageCounter--;
+    mainImageElement.setAttribute("src",imageSrcArray[imageCounter]);
+}
+})
+
+document.getElementById("scroll-right").addEventListener("click",()=>
+{
+    if(imageCounter<3)
+    {
+    imageCounter++;
+    mainImageElement.setAttribute("src",imageSrcArray[imageCounter]);
+}
+})
