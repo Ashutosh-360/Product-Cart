@@ -46,3 +46,36 @@ document.getElementById("scroll-right").addEventListener("click",()=>
     mainImageElement.setAttribute("src",imageSrcArray[imageCounter]);
 }
 })
+
+
+
+
+// ==================When clicked on cart Image======================================
+
+const cartImageElement=document.getElementById("cart-img");
+cartImageElement.addEventListener("click",openCartFunc);
+const deleteCartElement=document.getElementById("delete-cart");
+deleteCartElement.addEventListener("click",deleteCartFunc);
+
+const cart=document.getElementById("openedCart");
+function openCartFunc()
+{
+    if(cart.style.display!="block")
+    {
+        cart.style.display="block";
+    }
+    else
+    {
+        cart.style.display="none";
+    }
+    
+}
+
+
+const openedCartContentElement=document.getElementsByClassName("openedCart-content")[0];
+const checkOutBtn=document.getElementsByClassName("checkout-btn")[0];
+function deleteCartFunc()
+{
+    openedCartContentElement.style.display="none";
+    checkOutBtn.style.display="none";
+}
