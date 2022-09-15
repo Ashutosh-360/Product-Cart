@@ -31,20 +31,25 @@ let imageSrcArray=["./img/image-product-1.jpg","./img/image-product-2.jpg","./im
 let imageCounter=0;
 document.getElementById("scroll-left").addEventListener("click",()=>
 {
-    if(imageCounter>0)
-    {
     imageCounter--;
+
+    if(imageCounter<0)
+    {
+        imageCounter=3;
+    }
+
     mainImageElement.setAttribute("src",imageSrcArray[imageCounter]);
-}
+
 })
 
 document.getElementById("scroll-right").addEventListener("click",()=>
 {
-    if(imageCounter<3)
-    {
     imageCounter++;
+    if(imageCounter>3)
+    {
+        imageCounter=0;
+    }
     mainImageElement.setAttribute("src",imageSrcArray[imageCounter]);
-}
 })
 
 
@@ -79,3 +84,21 @@ function deleteCartFunc()
     openedCartContentElement.style.display="none";
     checkOutBtn.style.display="none";
 }
+
+
+
+
+// -----------For updating the counter of cart------------
+
+const addToCartBtn=document.getElementById("addtocart");
+addToCartBtn.addEventListener("click",addToCartFunc);
+
+const cartCounterElement=document.getElementById("cart-counter");
+function addToCartFunc()
+{
+    cartCounterElement.innerText=counter;
+}
+
+
+
+
