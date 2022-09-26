@@ -81,8 +81,10 @@ const openedCartContentElement=document.getElementsByClassName("openedCart-conte
 const checkOutBtn=document.getElementsByClassName("checkout-btn")[0];
 function deleteCartFunc()
 {
+    
     openedCartContentElement.style.display="none";
     checkOutBtn.style.display="none";
+
 }
 
 
@@ -94,9 +96,22 @@ const addToCartBtn=document.getElementById("addtocart");
 addToCartBtn.addEventListener("click",addToCartFunc);
 
 const cartCounterElement=document.getElementById("cart-counter");
+const cartInnerItemsElement=document.getElementById("cart-inner-items");
 function addToCartFunc()
 {
+    //for making counter 0 after adding
+    counterBtnElement.innerText=0;
+
     cartCounterElement.innerText=counter;
+    let ans=125*Number(counter).toFixed(2);
+    let answerElement=document.createElement("h5");
+    answerElement.innerHTML=`$125 x ${counter} <span>${ans}</span>`;
+
+    cartInnerItemsElement.innerHTML="";
+    cartInnerItemsElement.innerHTML="<h4>Fall Limited Edition Sneakers</h4>";
+    cartInnerItemsElement.appendChild(answerElement);
+    openedCartContentElement.style.display="flex";
+    checkOutBtn.style.display="block";
 }
 
 
