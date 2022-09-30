@@ -99,8 +99,7 @@ const cartCounterElement=document.getElementById("cart-counter");
 const cartInnerItemsElement=document.getElementById("cart-inner-items");
 function addToCartFunc()
 {
-    //for making counter 0 after adding
-    counterBtnElement.innerText=0;
+    
 
     cartCounterElement.innerText=counter;
     let ans=125*Number(counter).toFixed(2);
@@ -112,8 +111,21 @@ function addToCartFunc()
     cartInnerItemsElement.appendChild(answerElement);
     openedCartContentElement.style.display="flex";
     checkOutBtn.style.display="block";
+
+
+    //for making counter 0 after adding
+    counterBtnElement.innerText=0;
+    counter=0;
 }
 
 
 
-
+// ===================for displaying thumnail image on big Image============
+const mainImage=document.getElementById("main-image");
+document.addEventListener("click",(event)=>
+{
+   if(event.target.className=="thumnail-img")
+   {
+        mainImage.src=event.target.src;
+   }
+   })
