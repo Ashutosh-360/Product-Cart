@@ -334,6 +334,10 @@ button {
   margin-right: 1.1rem;
 }
 
+/* ==============Mobile Menu============ */
+.mobile-menu{
+  display: none;
+}
 /* ------------------------media queries--------------- */
 
 @media (max-width: 1350px) {
@@ -414,9 +418,7 @@ button {
   header {
     height: 9%;
   }
-  .header-left a {
-    display: none;
-  }
+  
   #menu-img {
     display: block;
     margin-left: 15px;
@@ -488,8 +490,54 @@ button {
     right: 4.25rem;
     top: 0.75rem;
   }
-}
+  .header-left a {
+    display: none;
+  }
+  .mobile-menu{
+    position: fixed;
+    padding: 20px 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    left:0;
+    z-index: 500;
+    background:var(--Lightgrayishblue);
+  }
+  
+  .mobile-menu nav{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 
+  }
+  .mobile-menu nav a{
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.1rem;
+    color:var(--Orange);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+
+  }
+  .mobile-menu-logo {
+    width: 100%;
+    
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding-right: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.mobile-menu-logo span{
+  
+ font-size: 1.5rem;
+ padding:0 0.5rem;
+ font-weight: 700;
+ cursor: pointer;
+
+}
+}
 @media (max-width: 380px) {
   .product-content-section {
     padding: 1.2rem;
@@ -499,5 +547,8 @@ button {
   }
   #openedCart {
     right: 1.8rem;
+  }
+  .mobile-menu{
+    width: 60vw;
   }
 }
