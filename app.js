@@ -129,3 +129,18 @@ document.addEventListener("click",(event)=>
         mainImage.src=event.target.src;
    }
    })
+
+
+//    =================for opening mobile menu=========
+
+const mobileTab=document.getElementsByClassName("mobile-menu")[0];
+
+document.getElementById("menu-img").addEventListener("click",()=>
+{
+    mobileTab.style.display="block";
+})
+
+document.getElementById("close-symbol").addEventListener("click",()=>
+{
+    mobileTab.style.display="none";
+})
