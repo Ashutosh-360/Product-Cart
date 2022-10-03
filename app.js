@@ -81,9 +81,11 @@ const openedCartContentElement=document.getElementsByClassName("openedCart-conte
 const checkOutBtn=document.getElementsByClassName("checkout-btn")[0];
 function deleteCartFunc()
 {
-    
+
     openedCartContentElement.style.display="none";
     checkOutBtn.style.display="none";
+    cartCounterElement.innerText=0;
+    cartCounterElement.style.display="none";
 
 }
 
@@ -100,11 +102,11 @@ const cartInnerItemsElement=document.getElementById("cart-inner-items");
 function addToCartFunc()
 {
     
-
+    cartCounterElement.style.display="block";
     cartCounterElement.innerText=counter;
     let ans=125*Number(counter).toFixed(2);
     let answerElement=document.createElement("h5");
-    answerElement.innerHTML=`$125 x ${counter} <span>${ans}</span>`;
+    answerElement.innerHTML=`$125 x ${counter} <span>$${ans}</span>`;
 
     cartInnerItemsElement.innerHTML="";
     cartInnerItemsElement.innerHTML="<h4>Fall Limited Edition Sneakers</h4>";
@@ -143,4 +145,18 @@ document.getElementById("menu-img").addEventListener("click",()=>
 document.getElementById("close-symbol").addEventListener("click",()=>
 {
     mobileTab.style.display="none";
+})
+
+
+
+
+// =================Check out button===============
+
+const orderingStatus=document.getElementById("ordering-status");
+
+
+checkOutBtn.addEventListener("click",()=>{
+
+
+    orderingStatus.style.display="flex";
 })
